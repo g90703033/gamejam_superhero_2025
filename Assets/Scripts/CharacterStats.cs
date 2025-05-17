@@ -11,6 +11,7 @@ public class CharacterStats : MonoBehaviour
     void Start()
     {
         CopyAttributes(baseAttributes, buffedAttributes);
+        ApplyBuff(new SpeedBuff(2));
     }
 
     public CharacterAttributes GetCurrentStats()
@@ -20,6 +21,14 @@ public class CharacterStats : MonoBehaviour
 
 
     private List<Buff> activeBuffs = new List<Buff>();
+
+    public void ApplyBuff(BuffAttribute buff)
+    {
+        if (buff.attributes.moveSpeed != 0)
+        {
+            ApplyBuff(new SpeedBuff(buff.attributes.moveSpeed));
+        }
+    }
 
     public void ApplyBuff(Buff buff)
     {
