@@ -4,12 +4,18 @@ using UnityEngine.Events;
 
 public class GameLoop : MonoBehaviour
 {
-    UnityEvent OnGameComplete;
+    public UnityEvent<bool> OnGameComplete;
 
     public float maxPlayDuration = 180;
     private bool isPlaying = false;
 
     private float timer = 0.0f;
+
+    public bool IsWin()
+    {
+        return GameState.Instance.IsWin(); 
+    }
+
     public bool IsGameComplete()
     {
         return timer > maxPlayDuration;
@@ -35,7 +41,7 @@ public class GameLoop : MonoBehaviour
         timer += Time.deltaTime;
         if (IsGameComplete() )
         {
-            OnGameComplete.Invoke();
+            OnGameComplete.Invoke(IsWin());
         }
     }
 }

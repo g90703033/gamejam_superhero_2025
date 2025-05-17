@@ -6,6 +6,8 @@ public class GameState : MonoBehaviour
     public static GameState Instance { get; private set; }
     public GameObject Player1;
     public GameObject Player2;
+    public int GetExp = 0;
+    public int SuccessExpGoal = 100;
 
     public Transform groundTransform;
 
@@ -25,5 +27,10 @@ public class GameState : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool IsWin()
+    {
+        return GetExp > SuccessExpGoal;
     }
 }
