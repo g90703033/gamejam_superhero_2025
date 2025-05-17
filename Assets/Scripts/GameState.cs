@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+
     public static GameState Instance { get; private set; }
+    public GameObject Player1;
+    public GameObject Player2;
 
     public Transform groundTransform;
+
     private void Awake()
     {
         Instance = this;

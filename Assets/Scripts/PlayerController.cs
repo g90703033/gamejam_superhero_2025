@@ -1,9 +1,19 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IPlayerController
 {
     public float moveSpeed = 5f;
     public float rotationSpeed = 100f;
+
+    public void AddSpeedLevel(int level)
+    {
+        moveSpeed += level * 2;
+    }
+
+    public void RemoveSpeedLevel(int level)
+    {
+        throw new System.NotImplementedException();
+    }
 
     // Update is called once per frame
     void Update()

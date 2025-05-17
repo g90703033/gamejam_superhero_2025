@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 7084542029926760254}
   - component: {fileID: 3203100614250767871}
   - component: {fileID: 1057278287080558063}
+  - component: {fileID: 7668888463463146429}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  levelStep: 2
 --- !u!114 &3203100614250767871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +387,23 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7668888463463146429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9139989185432359466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146e5666f4b1a4e4bab139155d16ed4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAttributes:
+    weightLifting: 0
+    moveSpeed: 0
+    strength: 0
+    size: 0

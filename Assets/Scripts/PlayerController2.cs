@@ -2,10 +2,22 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController2 : MonoBehaviour
+public class PlayerController2 : MonoBehaviour, IPlayerController
 {
     public float moveSpeed = 5f;
-    Vector3 move; 
+    public float levelStep = 2f;
+    Vector3 move;
+
+    public void AddSpeedLevel(int level)
+    {
+        moveSpeed += level * levelStep;
+    }
+
+    public void RemoveSpeedLevel(int level)
+    {
+        moveSpeed -= level * levelStep;
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveData = context.ReadValue<Vector2>();
@@ -19,6 +31,8 @@ public class PlayerController2 : MonoBehaviour
             transform.rotation = targetRotation;
         }
     }
+
+    
 
     void Update()
     {
