@@ -51,4 +51,21 @@ public class BuffManager : MonoBehaviour
 
         return null;
     }
+
+    //Choose Three Attribute For UI Manager
+    public List<BuffAttribute> GetThreeRandomAttribute()
+    {
+        List<BuffAttribute> temporaryBufferList = new List<BuffAttribute>();
+        for(int i = 0;i < buffList.attributes.Count;i++){
+            temporaryBufferList.Add(buffList.attributes[i]);
+        }
+        List<BuffAttribute> outputBufferList = new List<BuffAttribute>(); 
+        for (int i = 0; i < 3; i++){
+            int index = Random.Range(0, temporaryBufferList.Count - 1);
+            outputBufferList.Add(temporaryBufferList[index]);
+            temporaryBufferList.RemoveAt(index);
+        }
+
+        return outputBufferList;
+    }
 }
