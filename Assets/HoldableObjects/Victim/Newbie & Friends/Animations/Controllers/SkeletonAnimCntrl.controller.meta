@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b45a00536dc86af4d9529979221d08cf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208112
+  packageName: Newbie & Friends
+  packageVersion: 1.0
+  assetPath: Assets/Newbie & Friends/Animations/Controllers/SkeletonAnimCntrl.controller
+  uploadId: 466943

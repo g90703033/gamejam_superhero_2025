@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3f5d6197ea747c942870be4a80363d98
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208112
+  packageName: Newbie & Friends
+  packageVersion: 1.0
+  assetPath: Assets/Newbie & Friends/Animations/Controllers/HeroAnimCntrl.controller
+  uploadId: 466943
