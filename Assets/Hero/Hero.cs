@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
-    
+
     [SerializeField]
     public HeroArm heroArmL;
     [SerializeField]
@@ -35,6 +35,16 @@ public class Hero : MonoBehaviour
     public float maxHoldingWeight;
     public UnityEvent<HeroArm.ArmType> onArmBrokenEvent;
     public UnityEvent<HeroArm> onArmBrokenObjEvent;
+
+    [Header("Buff")]
+    public int levelMoveSpeed;
+    public float[] levelMoveSpeedAttr;
+    public int levelThrowPower;
+    public float[] levelThrowPowerAttr;
+    public int levelWeightLifting;
+    public float[] levelWeightLiftingAttr;
+    public int levelSize;
+    public float[] levelSizeAttr;
 
     void Start()
     {
@@ -146,5 +156,113 @@ public class Hero : MonoBehaviour
             case HeroArm.ArmType.Left: onArmBrokenObjEvent?.Invoke(heroArmL); break;
             case HeroArm.ArmType.Right: onArmBrokenObjEvent?.Invoke(heroArmR); break;
         }
-     }
+    }
+     
+    public void AddWeightLevel(int level)
+    {
+        levelWeightLifting += level;
+
+        int usedLevel = levelWeightLifting;
+        if (usedLevel > levelWeightLiftingAttr.Length - 1)
+        {
+            usedLevel = levelWeightLiftingAttr.Length - 1;
+        }
+
+        maxHoldingWeight = levelWeightLiftingAttr[usedLevel];
+    }
+
+    public void RemoveWeightLevel(int level)
+    { 
+        levelWeightLifting -= level;
+
+        int usedLevel = levelWeightLifting;
+        if (usedLevel < 0)
+        {
+            usedLevel = 0;
+            Debug.LogWarning("Level less than zero!!");
+        }
+
+        maxHoldingWeight = levelWeightLiftingAttr[usedLevel];
+    }
+
+    public void AddStrengthLevel(int level)
+    {
+        levelThrowPower += level;
+
+        int usedLevel = levelThrowPower;
+        if (usedLevel > levelThrowPowerAttr.Length - 1)
+        {
+            usedLevel = levelThrowPowerAttr.Length - 1;
+        }
+
+        throwStrength = levelThrowPowerAttr[usedLevel];
+    }
+
+    public void RemoveStrengthLevel(int level)
+    { 
+        levelThrowPower -= level;
+
+        int usedLevel = levelThrowPower;
+        if (usedLevel < 0)
+        {
+            usedLevel = 0;
+            Debug.LogWarning("Level less than zero!!");
+        }
+
+        throwStrength = levelThrowPowerAttr[usedLevel];
+    }
+
+    public void AddMoveSpeedLevel(int level)
+    {
+        levelMoveSpeed += level;
+
+        int usedLevel = levelMoveSpeed;
+        if (usedLevel > levelMoveSpeedAttr.Length - 1)
+        {
+            usedLevel = levelMoveSpeedAttr.Length - 1;
+        }
+
+        maxMoveSpeed = levelMoveSpeedAttr[usedLevel];
+    }
+
+    public void RemoveMoveSpeedLevel(int level)
+    { 
+        levelMoveSpeed -= level;
+
+        int usedLevel = levelThrowPower;
+        if (usedLevel < 0)
+        {
+            usedLevel = 0;
+            Debug.LogWarning("Level less than zero!!");
+        }
+
+        maxMoveSpeed = levelMoveSpeedAttr[usedLevel];
+    }
+
+    public void AddSizeLevel(int level)
+    {
+        levelSize += level;
+
+        int usedLevel = levelSize;
+        if (usedLevel > levelSizeAttr.Length - 1)
+        {
+            usedLevel = levelSizeAttr.Length - 1;
+        }
+
+        transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
+    }
+
+    public void RemoveSizeLevel(int level)
+    { 
+        levelSize -= level;
+
+        int usedLevel = levelSize;
+        if (usedLevel < 0)
+        {
+            usedLevel = 0;
+            Debug.LogWarning("Level less than zero!!");
+        }
+
+        transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
+    }
 }
