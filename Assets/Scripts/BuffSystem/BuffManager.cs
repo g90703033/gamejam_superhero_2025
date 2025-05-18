@@ -41,6 +41,7 @@ public class BuffManager : MonoBehaviour
         Debug.Log("item= " + buffList.attributes[0].title);
     }
 
+
     public BuffAttribute GetAttribute(string title)
     {
         for(int i = 0;i < buffList.attributes.Count;i++)

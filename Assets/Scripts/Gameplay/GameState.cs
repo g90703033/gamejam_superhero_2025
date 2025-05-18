@@ -33,4 +33,15 @@ public class GameState : MonoBehaviour
     {
         return GetExp > SuccessExpGoal;
     }
+
+    public void OnP1BuffGet(string title)
+    {
+        Player1.GetComponent<CharacterStats>().ApplyBuff(title);
+    }
+
+    public void OnP2BuffGet(string title)
+    {
+
+        Player2.GetComponent<CharacterStats>().ApplyBuff(title);
+    }
 }

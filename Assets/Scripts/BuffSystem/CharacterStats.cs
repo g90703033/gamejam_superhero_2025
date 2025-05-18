@@ -28,6 +28,15 @@ public class CharacterStats : MonoBehaviour
 
     private List<Buff> activeBuffs = new List<Buff>();
 
+    public void ApplyBuff(string title)
+    {
+        BuffAttribute attributes= BuffManager.Instance.GetAttribute(title);
+        if (attributes != null)
+        {
+            ApplyBuff(attributes);
+        }
+    }
+
     // [TODO] temp kind of hard code it. refactor later
     public void ApplyBuff(BuffAttribute buff)
     {
