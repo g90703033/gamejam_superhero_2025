@@ -8,6 +8,8 @@ namespace Jason.Avatar
     {
         public Action<PlayerAttribute> OnCatchLimb;
         public Collider CatChLimbCollider;
+        public Hero hero;
+        public AvatarManager AvatarManager;
 
         public GameObject limbVFX;
 
@@ -15,7 +17,23 @@ namespace Jason.Avatar
         {
             if (other.gameObject.tag == "Broken")
             {
-                CatchLamb(other.gameObject);
+                HeroArm.ArmType armType = other.gameObject.name.Contains("LeftArm") ? HeroArm.ArmType.Left : HeroArm.ArmType.Right;
+
+                if (armType is HeroArm.ArmType.Left && !hero.heroArmL.gameObject.activeSelf) 
+                {
+                    PlayerAttribute attribute = other.gameObject.GetComponent<LimbHeader>().Attribute;
+                    AvatarManager.RecoverLimb(armType, attribute);
+
+                    Destroy(other.gameObject);
+                }
+
+                if (armType is HeroArm.ArmType.Right && !hero.heroArmR.gameObject.activeSelf)
+                {
+                    PlayerAttribute attribute = other.gameObject.GetComponent<LimbHeader>().Attribute;
+                    AvatarManager.RecoverLimb(armType, attribute);
+
+                    Destroy(other.gameObject);
+                }
             }
         }
 
@@ -46,6 +64,8 @@ namespace Jason.Avatar
         {
             PlayerAttribute attribute = gameObject.GetComponent<LimbHeader>().Attribute;
             OnCatchLimb?.Invoke(attribute);
+
+            Destroy(gameObject);
         }
         private void EnableCatch()
         {

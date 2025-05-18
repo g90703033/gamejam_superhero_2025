@@ -1019,11 +1019,27 @@ PrefabInstance:
       objectReference: {fileID: 660350656}
     - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
       propertyPath: createZone.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
       propertyPath: createZone.z
-      value: 7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
+      propertyPath: createGapBegin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
+      propertyPath: createGapBegin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
+      propertyPath: createGapFinal.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368932849745145420, guid: 38886aa339f054fb6952873bb6918d33, type: 3}
+      propertyPath: createGapFinal.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

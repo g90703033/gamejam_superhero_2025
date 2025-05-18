@@ -13,7 +13,7 @@ namespace Jason.Avatar
         
         void Start()
         {
-            SetCatchLimb();
+            //SetCatchLimb();
             SetAllBody(DefaultType, LevelType.Default);
 
         }
@@ -32,11 +32,21 @@ namespace Jason.Avatar
             {
                 LimbHeader header = limbAttribute.limbHeader;
                 SetLimb(limbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
-                Destroy(limbAttribute.PlayerLimb);
 
-                limbService.OnCatchLimb = null;
+                //limbService.OnCatchLimb = null;
             };
         }
+
+        public void SetLimb(PlayerAttribute limbAttribute)
+        {
+            LimbHeader header = limbAttribute.limbHeader;
+            LimbType limb = limbAttribute.type;
+            ModifyType modify = header.limbTag.modifyType;
+            LevelType level = header.limbTag.levelType;
+
+            SetLimb(limbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
+        }
+
         public void SetLimb(LimbType limb, ModifyType modify, LevelType level)
         {
             foreach (var storelimb in AvatarLimb)
@@ -55,6 +65,31 @@ namespace Jason.Avatar
                 }
             }
         }
+
+        public void RecoverLimb(HeroArm.ArmType arm, PlayerAttribute limbAttribute)
+        {
+            LimbHeader header = limbAttribute.limbHeader;
+            LimbType limb = limbAttribute.type;
+            ModifyType modify = header.limbTag.modifyType;
+            LevelType level = header.limbTag.levelType;
+
+            AvatarLimbModifyLevel attribute = AvatarBodyStorage.GetLimb(limb, modify, level);
+            if (arm is HeroArm.ArmType.Left) 
+            {
+                var storelimb = AvatarLimb[1];
+                storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
+                storelimb.PlayerLimb.SetActive(true);
+                storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+            }
+            else
+            {
+                var storelimb = AvatarLimb[2];
+                storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
+                storelimb.PlayerLimb.SetActive(true);
+                storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+            }
+        }
+
         public void SetAllBody(ModifyType modify, LevelType level)
         {
             foreach (var limb in AvatarLimb)

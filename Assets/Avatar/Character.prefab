@@ -449,6 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CatChLimbCollider: {fileID: 1661971037031019345}
+  hero: {fileID: 4449091896402234788}
+  AvatarManager: {fileID: 4314733112259984500}
   limbVFX: {fileID: 1095565860330693663, guid: 16815cced9bd84a3f8a6064f65adc7ee, type: 3}
 --- !u!136 &1661971037031019345
 CapsuleCollider:
