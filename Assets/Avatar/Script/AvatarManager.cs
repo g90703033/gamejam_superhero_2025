@@ -33,6 +33,8 @@ namespace Jason.Avatar
                 LimbHeader header = limbAttribute.limbHeader;
                 SetLimb(limbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
                 Destroy(limbAttribute.PlayerLimb);
+
+                limbService.OnCatchLimb = null;
             };
         }
         public void SetLimb(LimbType limb, ModifyType modify, LevelType level)
