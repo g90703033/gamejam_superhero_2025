@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-public class Hero : MonoBehaviour
+public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff, IMoveSpeedBuff
 {
 
     [SerializeField]

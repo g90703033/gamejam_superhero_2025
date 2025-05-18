@@ -19,6 +19,11 @@ public class WeightLeftingBuff : Buff
             attributes
             );
         //TODO: implement 
+        IWeightLiftingBuff controller = go.GetComponent<Hero>() as IWeightLiftingBuff;
+        if (controller != null)
+        {
+            controller.AddWeightLevel(index);
+        }
     }
 
     public override void Remove(GameObject go)
@@ -30,5 +35,10 @@ public class WeightLeftingBuff : Buff
             attributes
             );
         //TODO: implement
+        IWeightLiftingBuff controller = go.GetComponent<Hero>() as IWeightLiftingBuff;
+        if (controller != null)
+        {
+            controller.RemoveWeightLevel(index);
+        }
     }
 }

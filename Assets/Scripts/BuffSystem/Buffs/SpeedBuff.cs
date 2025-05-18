@@ -19,7 +19,7 @@ public class SpeedBuff : Buff
             attributes
             );
 
-        IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
+        IMoveSpeedBuff controller = go.GetComponent<Hero>() as IMoveSpeedBuff;
         if (controller != null)
         {
             controller.AddMoveSpeedLevel(index);
@@ -35,7 +35,7 @@ public class SpeedBuff : Buff
             attributes
             );
 
-        IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
+        IMoveSpeedBuff controller = go.GetComponent<Hero>() as IMoveSpeedBuff;
         if (controller != null)
         {
             controller.RemoveMoveSpeedLevel(index);
