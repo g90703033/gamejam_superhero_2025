@@ -38,10 +38,10 @@ public class GameLoop : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (IsGameComplete() )
-        {
-            OnGameComplete.Invoke(IsWin());
-        }
+        //timer += Time.deltaTime;
+        //if (IsGameComplete() )
+        //{
+        //    OnGameComplete.Invoke(IsWin());
+        //}
     }
 }

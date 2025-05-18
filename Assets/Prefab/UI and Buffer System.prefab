@@ -133,52 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &983087749798891548
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2190737354673857489}
-  - component: {fileID: 8432828749483859549}
-  m_Layer: 0
-  m_Name: Buff Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2190737354673857489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983087749798891548}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 204.03488, y: 248.84314, z: 27.76703}
-  m_LocalScale: {x: 7.7715287, y: 7.7715287, z: 7.7715287}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4092500856347780302}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8432828749483859549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983087749798891548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3a1e06468a2cd141a2016081ca779d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buffList: {fileID: 11400000, guid: 0d327542c701d31419865fc9787d8f5f, type: 2}
-  dataFileName: NewBuffAttributeList
 --- !u!1 &1609014996452166768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4669450112475234381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b688b3a11b890aa4c85d75909edaeb66, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e5173bf75cb5cc429711afce4fce1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 7731228726948544678}
@@ -1490,7 +1444,7 @@ MonoBehaviour:
   powerSlide: {fileID: 2055667281768298389}
   timerText: {fileID: 4416080894520220688}
   ability: []
-  buffManager: {fileID: 8432828749483859549}
+  buffManager: {fileID: 0}
   bufferSelectionImage:
   - {fileID: 734263045056363001}
   - {fileID: 7878608064415990576}
@@ -3230,7 +3184,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2190737354673857489}
   - {fileID: 2167682089788143839}
   - {fileID: 7727140239902709772}
   - {fileID: 160820089838934614}

@@ -38,10 +38,10 @@ public class UIManager : MonoBehaviour
 
     //累積值
     private int powerValue = 0;
-    private int powerThreshold = 100;
+    public int powerThreshold = 100;
     
     //計時
-    private float timerThrshold = 20f;
+    public float timerThrshold = 20f;
     private float timer = 0f;
 
     void Start()
