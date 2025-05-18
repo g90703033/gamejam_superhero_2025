@@ -33,6 +33,7 @@ public class Hero : MonoBehaviour
     [Header("HoldingWeight")]
     public float maxHoldingWeight;
     public UnityEvent<HeroArm.ArmType> onArmBrokenEvent;
+    public UnityEvent<GameObject> onArmBrokenObjEvent;
 
     void Start()
     {
@@ -134,5 +135,7 @@ public class Hero : MonoBehaviour
     public void OnArmBroken(HeroArm.ArmType armType)
     {
         onArmBrokenEvent.Invoke(armType);
+
+
      }
 }
