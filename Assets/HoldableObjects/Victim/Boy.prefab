@@ -2123,7 +2123,6 @@ GameObject:
   - component: {fileID: 4210159260669319969}
   - component: {fileID: 7228226074883178410}
   - component: {fileID: 3238119712982419221}
-  - component: {fileID: 1936085005016758803}
   - component: {fileID: 5675141506356603011}
   m_Layer: 0
   m_Name: Boy
@@ -2240,19 +2239,6 @@ MonoBehaviour:
   isDead: 0
   deadRecycleDelay: 3
 --- !u!114 &3238119712982419221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159413777063136695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52c63b7882724f13942f10ca4cc9106, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  victim: {fileID: 7228226074883178410}
---- !u!114 &1936085005016758803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
