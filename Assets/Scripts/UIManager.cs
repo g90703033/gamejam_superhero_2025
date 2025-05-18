@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+
     //各種 Panel 以及 UI
     public GameObject mainMenuPanel;
     public GameObject pausePanel;
@@ -261,6 +263,18 @@ public class UIManager : MonoBehaviour
             if(is1PReadyToGetAbility == true && is2PReadyToGetAbility == true){
                 isAllReadyToGetAbility = true;
                 StopChoosingAbility();
+
+                if (is1PReadyToGetAbility)
+                {
+                    if (currentAbility1PSelect < 3 && currentAbility1PSelect >= 0)
+                        GameState.Instance.OnP1BuffGet(bufferSelectionTitle[currentAbility1PSelect].text.Trim());
+                }
+
+                if (is2PReadyToGetAbility)
+                {
+                    if (currentAbility2PSelect < 3 && currentAbility2PSelect >= 0)
+                    GameState.Instance.OnP2BuffGet(bufferSelectionTitle[currentAbility2PSelect].text.Trim());
+                }
             }
 
         }
