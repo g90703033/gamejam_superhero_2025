@@ -1769,10 +1769,34 @@ MonoBehaviour:
   isFirstComing: 0
   initEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8590068293842524454}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: EnableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   firstComingEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8590068293842524454}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: DisableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   myRbs:
   - {fileID: 7923932316665069102}
   - {fileID: 1215742154020419933}

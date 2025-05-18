@@ -996,7 +996,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5343907359531439960}
   - component: {fileID: 5996534213683028014}
-  - component: {fileID: 833937497357831175}
   m_Layer: 0
   m_Name: Boy
   m_TagString: Untagged
@@ -1027,7 +1026,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2890120960978819521}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1126,26 +1125,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00007879734, y: 0.2887356, z: 0.0056409836}
     m_Extent: {x: 0.8194846, y: 0.80253625, z: 0.26701576}
   m_DirtyAABB: 0
---- !u!114 &833937497357831175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2890120960978819521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d81463195e766e4d800e40257ed8ce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowPrefab: {fileID: 1437935999619623386, guid: 4078dba434c4a3645a9eb827e87d458a, type: 3}
-  maxHeight: 15
-  maxScale: 5
-  minAlpha: 0.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  raycastDistance: 50
 --- !u!1 &3020112854626859308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,10 +2194,34 @@ MonoBehaviour:
   isFirstComing: 0
   initEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5442888654647095235}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: EnableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   firstComingEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5442888654647095235}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: DisableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   myRbs:
   - {fileID: 4210159260669319969}
   - {fileID: 4186708355856271497}

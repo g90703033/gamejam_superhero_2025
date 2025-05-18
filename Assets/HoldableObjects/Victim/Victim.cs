@@ -15,12 +15,6 @@ public class Victim : HoldableObject
     public float deadRecycleDelay = 3f;
     private float deadMoment;
 
-    void OnEnable()
-    {
-        //Creat vShadow
-     }
-
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
