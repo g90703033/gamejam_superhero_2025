@@ -10,6 +10,7 @@ namespace Jason.Avatar
         public LimbService limbService;
         public AvatarBodyStorage AvatarBodyStorage;
         public List<PlayerAttribute> AvatarLimb;
+        
         void Start()
         {
             SetCatchLimb();
@@ -27,10 +28,11 @@ namespace Jason.Avatar
         }
         private void SetCatchLimb()
         {
-            limbService.OnCatchLimb += (iimbAttribute) =>
+            limbService.OnCatchLimb += (limbAttribute) =>
             {
-                LimbHeader header = iimbAttribute.limbHeader;
-                SetLimb(iimbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
+                LimbHeader header = limbAttribute.limbHeader;
+                SetLimb(limbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
+                Destroy(limbAttribute.PlayerLimb);
             };
         }
         public void SetLimb(LimbType limb, ModifyType modify, LevelType level)
@@ -40,11 +42,13 @@ namespace Jason.Avatar
                 AvatarLimbModifyLevel attribute = AvatarBodyStorage.GetLimb(limb, modify, level);
                 if (storelimb.type == limb) 
                 {
-                    Debug.Log($"Get {limb} : {storelimb.PlayerLimb.name}");
-                    storelimb.PlayerLimb.tag = "HeroArm";
-                    storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
-                    storelimb.PlayerLimb.SetActive(true);
-                    storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+                    if (storelimb.PlayerLimb.activeSelf is false)
+                    {
+                        storelimb.PlayerLimb.tag = "HeroArm";
+                        storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
+                        storelimb.PlayerLimb.SetActive(true);
+                        storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+                    }
                     return;
                 }
             }

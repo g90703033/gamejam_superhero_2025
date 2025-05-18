@@ -7,6 +7,7 @@ namespace Jason.Avatar
     public class LimbService : MonoBehaviour
     {
         public Action<PlayerAttribute> OnCatchLimb;
+        public Collider CatChLimbCollider;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -21,6 +22,8 @@ namespace Jason.Avatar
         /// </summary>
         public void OnLimbBrokenAction(HeroArm limb)
         {
+            CatChLimbCollider.enabled = false;
+            Invoke("EnableCatch", 2);
             GameObject limbObject = limb.gameObject;
             limbObject.SetActive(false);
             GameObject brokenObject = Instantiate(limbObject);
@@ -33,6 +36,10 @@ namespace Jason.Avatar
         {
             PlayerAttribute attribute = gameObject.GetComponent<LimbHeader>().Attribute;
             OnCatchLimb?.Invoke(attribute);
+        }
+        private void EnableCatch()
+        {
+            CatChLimbCollider.enabled = true;
         }
         private void SetTag(GameObject brokenObject)
         {
