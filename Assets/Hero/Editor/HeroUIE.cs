@@ -1,16 +1,22 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class HeroUIE : MonoBehaviour
+[CustomEditor(typeof(Hero))]
+public class HeroUIE : Editor
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnInspectorGUI()
     {
-        
-    }
+        DrawDefaultInspector();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Hero myScript = (Hero)target;
+
+        if (GUILayout.Button("Get Cols"))
+        {
+            myScript.heroCols = myScript.GetComponentsInChildren<Collider>();
+            EditorUtility.SetDirty(myScript);
+        }
     }
 }
