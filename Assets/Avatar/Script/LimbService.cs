@@ -9,10 +9,12 @@ namespace Jason.Avatar
         public Action<PlayerAttribute> OnCatchLimb;
         public Collider CatChLimbCollider;
 
+        public GameObject limbVFX;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Broken")
-            { 
+            {
                 CatchLamb(other.gameObject);
             }
         }
@@ -26,11 +28,19 @@ namespace Jason.Avatar
             Invoke("EnableCatch", 2);
             GameObject limbObject = limb.gameObject;
             limbObject.SetActive(false);
-            GameObject brokenObject = Instantiate(limbObject);
+            GameObject brokenObject = Instantiate(limbObject, limbObject.transform.position, limbObject.transform.rotation);
+
             SetTag(brokenObject);
-            brokenObject.SetActive(true);
-            brokenObject.GetComponent<Rigidbody>().AddForce(UnityEngine.Random.insideUnitSphere * 3000, ForceMode.Impulse);
+
+            Vector3 explodeForce = UnityEngine.Random.insideUnitSphere * 30f;
+            if (explodeForce.y < 0f) explodeForce.y = -explodeForce.y;
+            brokenObject.GetComponent<Rigidbody>().AddForce(explodeForce, ForceMode.Impulse);
             ClearCmponent(brokenObject);
+
+            GameObject vfx = Instantiate(limbVFX, limbObject.transform.position, limbObject.transform.rotation, brokenObject.transform);
+            //vfx.transform.parent = brokenObject.transform;
+
+            brokenObject.SetActive(true);
         }
         public void CatchLamb(GameObject gameObject)
         {
