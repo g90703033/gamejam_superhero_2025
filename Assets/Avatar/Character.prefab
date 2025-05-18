@@ -267,7 +267,19 @@ MonoBehaviour:
       m_Calls: []
   onArmBrokenObjEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8933072230900492027}
+        m_TargetAssemblyTypeName: Jason.Avatar.LimbService, Assembly-CSharp
+        m_MethodName: OnLimbBrokenAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2960934102206434555
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +292,7 @@ GameObject:
   - component: {fileID: 4314733112259984500}
   - component: {fileID: 1478994605287580996}
   - component: {fileID: 8933072230900492027}
+  - component: {fileID: 1661971037031019345}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -400,6 +413,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c88c2de35d4bc047b3c650ddce250d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1661971037031019345
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960934102206434555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 2.6631398
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8315699, z: 0}
 --- !u!1 &3460155274663047476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1192,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+  HeroArm: {fileID: 545622950076938016}
 --- !u!153 &2396727671993418865
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1336,6 +1373,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+  HeroArm: {fileID: 0}
 --- !u!144 &5174919076615561938
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1404,6 +1442,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+  HeroArm: {fileID: 0}
 --- !u!136 &3480127040324678946
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1481,6 +1520,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+  HeroArm: {fileID: 0}
 --- !u!144 &2697967828468359377
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1576,6 +1616,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+  HeroArm: {fileID: 1770490103049604847}
 --- !u!153 &8400410208788528359
 ConfigurableJoint:
   m_ObjectHideFlags: 0

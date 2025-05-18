@@ -26,7 +26,10 @@ public class HeroArm : MonoBehaviour
 
         if (holdingWeight > hero.maxHoldingWeight)
         {
+            ReleaseObjects();
             onArmBrokenEvent.Invoke();
+
+            hero.OnArmBroken(armType);
         }
     }
 

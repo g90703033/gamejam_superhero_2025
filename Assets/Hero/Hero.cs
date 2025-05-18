@@ -6,9 +6,9 @@ using UnityEngine.Events;
 public class Hero : MonoBehaviour
 {
     [SerializeField]
-    HeroArm heroArmL;
+    public HeroArm heroArmL;
     [SerializeField]
-    HeroArm heroArmR;
+    public HeroArm heroArmR;
 
     [SerializeField]
     Rigidbody rb;
@@ -33,7 +33,7 @@ public class Hero : MonoBehaviour
     [Header("HoldingWeight")]
     public float maxHoldingWeight;
     public UnityEvent<HeroArm.ArmType> onArmBrokenEvent;
-    public UnityEvent<GameObject> onArmBrokenObjEvent;
+    public UnityEvent<HeroArm> onArmBrokenObjEvent;
 
     void Start()
     {
@@ -136,6 +136,10 @@ public class Hero : MonoBehaviour
     {
         onArmBrokenEvent.Invoke(armType);
 
-
+        switch (armType)
+        {
+            case HeroArm.ArmType.Left: onArmBrokenObjEvent?.Invoke(heroArmL); break;
+            case HeroArm.ArmType.Right: onArmBrokenObjEvent?.Invoke(heroArmR); break;
+        }
      }
 }
