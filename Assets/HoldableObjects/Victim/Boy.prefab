@@ -1041,7 +1041,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ed9372ce9d9f20a4aa4f77d31fd1040d, type: 2}
+  - {fileID: 2100000, guid: ba7dea4240d9f4cb4a4f59526ab6f6a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2249,8 +2249,10 @@ MonoBehaviour:
   activeJointSpring: 2000
   pooledObject: {fileID: 5675141506356603011}
   isDead: 0
-  deadRecycleDelay: 3
+  deadRecycleDelay: 5
   deadVFX: {fileID: 9183994225825540110}
+  m_renderer: {fileID: 5996534213683028014}
+  m_material: {fileID: 0}
 --- !u!114 &3238119712982419221
 MonoBehaviour:
   m_ObjectHideFlags: 0

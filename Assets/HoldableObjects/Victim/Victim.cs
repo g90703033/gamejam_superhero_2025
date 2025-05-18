@@ -17,12 +17,31 @@ public class Victim : HoldableObject
 
     public GameObject deadVFX;
 
+    public Renderer m_renderer;
+    public Material m_material;
+    public Material dissolveMat
+    {
+        get
+        {
+            if (m_material == null)
+            {
+                m_material = m_renderer.material;
+            }
+            return m_material;
+         }
+     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
+
+    public void SetDissolve(float val)
+    {
+        dissolveMat.SetFloat("_Alpha", val); // semi-transparent
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -35,7 +54,12 @@ public class Victim : HoldableObject
             }
             else if (isDead && Time.time - deadMoment > deadRecycleDelay)
             {
-                Recycle();
+                SetDissolve( 2f - (Time.time - deadMoment - deadRecycleDelay)*2);
+
+                if (Time.time - deadMoment > deadRecycleDelay + 1f)
+                {
+                    Recycle();
+                }
              }
         }
     }
@@ -84,6 +108,8 @@ public class Victim : HoldableObject
         SetJointForce(0f);
 
         deadVFX.SetActive(false);
+
+        SetDissolve(2f);
     }
 
     public override void ThrowObject(Vector3 force)
