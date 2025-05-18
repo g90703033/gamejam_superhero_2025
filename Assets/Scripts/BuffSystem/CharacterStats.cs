@@ -4,7 +4,9 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public CharacterAttributes baseAttributes = new CharacterAttributes();
-    private CharacterAttributes buffedAttributes = new CharacterAttributes();
+    
+    //TODO: temp set to public for debug
+    public CharacterAttributes buffedAttributes = new CharacterAttributes();
 
     private CharacterAttributes activeBuff = null;
 
