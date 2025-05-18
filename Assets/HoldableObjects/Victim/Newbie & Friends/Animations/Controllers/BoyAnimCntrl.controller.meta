@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ea653714e08828947a1e0976b7238c65
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208112
+  packageName: Newbie & Friends
+  packageVersion: 1.0
+  assetPath: Assets/Newbie & Friends/Animations/Controllers/BoyAnimCntrl.controller
+  uploadId: 466943
