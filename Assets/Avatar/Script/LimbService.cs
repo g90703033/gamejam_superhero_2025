@@ -8,10 +8,12 @@ namespace Jason.Avatar
     {
         public Action<PlayerAttribute> OnCatchLimb;
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.tag == "Broken")
-            { CatchLamb(collision.gameObject); }
+            if (other.gameObject.tag == "Broken")
+            { 
+                CatchLamb(other.gameObject);
+            }
         }
 
         /// <summary>
@@ -22,16 +24,25 @@ namespace Jason.Avatar
             GameObject limbObject = limb.gameObject;
             limbObject.SetActive(false);
             GameObject brokenObject = Instantiate(limbObject);
-            brokenObject.tag = "Broken";
+            SetTag(brokenObject);
             brokenObject.SetActive(true);
-            brokenObject.GetComponent<Rigidbody>().AddForce(UnityEngine.Random.insideUnitSphere, ForceMode.Impulse);
+            brokenObject.GetComponent<Rigidbody>().AddForce(UnityEngine.Random.insideUnitSphere * 3000, ForceMode.Impulse);
             ClearCmponent(brokenObject);
         }
         public void CatchLamb(GameObject gameObject)
         {
-            Debug.Log("Get");
             PlayerAttribute attribute = gameObject.GetComponent<LimbHeader>().Attribute;
             OnCatchLimb?.Invoke(attribute);
+        }
+        private void SetTag(GameObject brokenObject)
+        {
+            brokenObject.tag = "Broken";
+            for (int index = 0; index < brokenObject.transform.childCount; index++)
+            {
+                GameObject gameObject = brokenObject.transform.GetChild(index).gameObject;
+                gameObject.tag = "Broken";
+                //SetTag(gameObject);
+            }
         }
         private void ClearCmponent(GameObject brokenObject)
         {

@@ -29,7 +29,7 @@ namespace Jason.Avatar
             limbService.OnCatchLimb += (iimbAttribute) =>
             {
                 LimbHeader header = iimbAttribute.limbHeader;
-                SetLimb(header.limbTag.limbType, header.limbTag.modifyType, header.limbTag.levelType);
+                SetLimb(iimbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
             };
         }
         public void SetLimb(LimbType limb, ModifyType modify, LevelType level)
@@ -38,7 +38,13 @@ namespace Jason.Avatar
             {
                 AvatarLimbModifyLevel attribute = AvatarBodyStorage.GetLimb(limb, modify, level);
                 if (storelimb.type == limb) 
-                { storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh; return; }
+                {
+                    Debug.Log($"Get {limb} : {storelimb.PlayerLimb.name}");
+                    storelimb.PlayerLimb.tag = "HeroArm";
+                    storelimb.PlayerLimb.SetActive(true);
+                    storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+                    return;
+                }
             }
         }
         public void SetAllBody(ModifyType modify, LevelType level)
