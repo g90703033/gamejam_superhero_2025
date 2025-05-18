@@ -22,11 +22,24 @@ public class CharacterStats : MonoBehaviour
 
     private List<Buff> activeBuffs = new List<Buff>();
 
+    // [TODO] temp kind of hard code it. refactor later
     public void ApplyBuff(BuffAttribute buff)
     {
         if (buff.attributes.moveSpeed != 0)
         {
             ApplyBuff(new SpeedBuff(buff.attributes.moveSpeed));
+        }
+        if (buff.attributes.size != 0)
+        {
+            ApplyBuff(new SizeBuff(buff.attributes.size));
+        }
+        if (buff.attributes.strength != 0)
+        {
+            ApplyBuff(new StrengthBuff(buff.attributes.strength));
+        }
+        if (buff.attributes.weightLifting != 0)
+        {
+            ApplyBuff(new WeightLeftingBuff(buff.attributes.weightLifting));
         }
     }
 
