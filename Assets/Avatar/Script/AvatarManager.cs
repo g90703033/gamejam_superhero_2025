@@ -14,6 +14,7 @@ namespace Jason.Avatar
         {
             SetCatchLimb();
             SetAllBody(DefaultType, LevelType.Default);
+
         }
 
         void Update()
@@ -41,6 +42,7 @@ namespace Jason.Avatar
                 {
                     Debug.Log($"Get {limb} : {storelimb.PlayerLimb.name}");
                     storelimb.PlayerLimb.tag = "HeroArm";
+                    storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
                     storelimb.PlayerLimb.SetActive(true);
                     storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
                     return;
@@ -63,6 +65,7 @@ namespace Jason.Avatar
             limb.limbHeader.limbTag.limbType = limb.type;
             limb.limbHeader.limbTag.modifyType = modify;
             limb.limbHeader.limbTag.levelType = level;
+            limb.OriginQuaternion = limb.PlayerLimb.transform.localRotation;
         }
         [Serializable]
         public class PlayerAttribute
@@ -70,6 +73,7 @@ namespace Jason.Avatar
             public LimbType type;
             public GameObject PlayerLimb;
             public LimbHeader limbHeader;
+            public Quaternion OriginQuaternion;
         }
     }
 }

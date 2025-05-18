@@ -28,7 +28,6 @@ public class HeroArm : MonoBehaviour
         {
             ReleaseObjects();
             onArmBrokenEvent.Invoke();
-
             hero.OnArmBroken(armType);
         }
     }
