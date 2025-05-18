@@ -12,9 +12,23 @@ public class SizeBuff : Buff
 
     public override void Apply(GameObject go)
     {
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.size += index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+        //TODO: implement 
     }
 
     public override void Remove(GameObject go)
     {
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.size -= index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+        //TODO: implement
     }
 }

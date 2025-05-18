@@ -12,19 +12,23 @@ public class WeightLeftingBuff : Buff
 
     public override void Apply(GameObject go)
     {
-        IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
-        if (controller != null)
-        {
-            controller.AddMoveSpeedLevel(index);
-        }
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.weightLifting += index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+        //TODO: implement 
     }
 
     public override void Remove(GameObject go)
     {
-        IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
-        if (controller != null)
-        {
-            controller.RemoveMoveSpeedLevel(index);
-        }
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.weightLifting -= index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+        //TODO: implement
     }
 }

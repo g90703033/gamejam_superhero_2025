@@ -12,6 +12,13 @@ public class SpeedBuff : Buff
 
     public override void Apply(GameObject go)
     {
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.moveSpeed += index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+
         IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
         if (controller != null)
         {
@@ -21,6 +28,13 @@ public class SpeedBuff : Buff
 
     public override void Remove(GameObject go)
     {
+        CharacterAttributes attributes = new CharacterAttributes();
+        attributes.moveSpeed -= index;
+
+        go.GetComponent<CharacterStats>().ChangeAttribute(
+            attributes
+            );
+
         IMoveSpeedBuff controller = go.GetComponent<PlayerController2>() as IMoveSpeedBuff;
         if (controller != null)
         {
