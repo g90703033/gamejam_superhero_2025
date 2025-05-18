@@ -18,6 +18,8 @@ public class HeroArm : MonoBehaviour
 
     public UnityEvent onArmBrokenEvent;
 
+    public GameObject deadVFX;
+
     public void AddHoldableObject(HoldableObject holdableObject)
     {
         holdableObjectList.Add(holdableObject);
@@ -29,8 +31,16 @@ public class HeroArm : MonoBehaviour
             ReleaseObjects();
             onArmBrokenEvent.Invoke();
             hero.OnArmBroken(armType);
+
+            deadVFX.SetActive(true);
+            Invoke("StopVFX", 3f);
         }
     }
+
+    public void StopVFX()
+    {
+        deadVFX.SetActive(false);
+     }
 
     public void RemoveHoldableObject(HoldableObject holdableObject)
     {
