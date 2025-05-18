@@ -25,7 +25,11 @@ public class VictimConsole : MonoBehaviour
 
             victimObj.transform.position = transform.position + offset + Random.insideUnitSphere * radius;
 
+            HoldableObject holdableObject = victimObj.GetComponent<HoldableObject>();
+            holdableObject.Init();
+            
             victimObj.SetActive(true);
+
 
             lastCreatedTime = Time.time;
          }

@@ -2124,6 +2124,7 @@ GameObject:
   - component: {fileID: 7228226074883178410}
   - component: {fileID: 3238119712982419221}
   - component: {fileID: 5675141506356603011}
+  - component: {fileID: 5442888654647095235}
   m_Layer: 0
   m_Name: Boy
   m_TagString: Victim
@@ -2211,6 +2212,13 @@ MonoBehaviour:
   weight: 70
   attachedJoint: {fileID: 0}
   attachedArm: {fileID: 0}
+  isFirstComing: 0
+  initEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  firstComingEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
   myRbs:
   - {fileID: 4210159260669319969}
   - {fileID: 4186708355856271497}
@@ -2268,6 +2276,19 @@ MonoBehaviour:
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5442888654647095235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159413777063136695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa415db86bf14077832d7cacb763472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualShadow: {fileID: 0}
 --- !u!1 &5230205539250127429
 GameObject:
   m_ObjectHideFlags: 0

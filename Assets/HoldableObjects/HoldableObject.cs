@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HoldableObject : MonoBehaviour
 {
@@ -25,10 +26,30 @@ public class HoldableObject : MonoBehaviour
         }
     }
 
+    public bool isFirstComing;
+    public UnityEvent initEvent;
+    public UnityEvent firstComingEndEvent;
+
+    public virtual void EndFirstComing()
+    {
+        if (isFirstComing)
+        {
+            isFirstComing = false;
+
+            firstComingEndEvent.Invoke();
+         }
+     }
+
+    public virtual void Init()
+    {
+        isFirstComing = true;
+        initEvent.Invoke();
+     }
+
     public virtual void ThrowObject(Vector3 force)
     {
 
-     }
+    }
 
     public virtual void ReleaseObject()
     {
