@@ -64,7 +64,7 @@ public class BuffManager : MonoBehaviour
         }
         List<BuffAttribute> outputBufferList = new List<BuffAttribute>(); 
         for (int i = 0; i < 3; i++){
-            int index = Random.Range(0, temporaryBufferList.Count - 1);
+            int index = Random.Range(0, temporaryBufferList.Count);
             outputBufferList.Add(temporaryBufferList[index]);
             temporaryBufferList.RemoveAt(index);
         }
