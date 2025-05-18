@@ -1145,7 +1145,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  raycastDistance: 20
+  raycastDistance: 50
 --- !u!1 &3020112854626859308
 GameObject:
   m_ObjectHideFlags: 0
