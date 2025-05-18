@@ -2,18 +2,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController2 : MonoBehaviour, ISpeedBuff
+public class PlayerController2 : MonoBehaviour, IMoveSpeedBuff
 {
     public float moveSpeed = 5f;
     public float levelStep = 2f;
     Vector3 move;
 
-    public void AddSpeedLevel(int level)
+    public void AddMoveSpeedLevel(int level)
     {
         moveSpeed += level * levelStep;
     }
 
-    public void RemoveSpeedLevel(int level)
+    public void RemoveMoveSpeedLevel(int level)
     {
         moveSpeed -= level * levelStep;
     }

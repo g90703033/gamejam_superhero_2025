@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, ISpeedBuff
+public class PlayerController : MonoBehaviour, IMoveSpeedBuff
 {
     public float moveSpeed = 5f;
     public float rotationSpeed = 100f;
 
-    public void AddSpeedLevel(int level)
+    public void AddMoveSpeedLevel(int level)
     {
         moveSpeed += level * 2;
     }
 
-    public void RemoveSpeedLevel(int level)
+    public void RemoveMoveSpeedLevel(int level)
     {
         throw new System.NotImplementedException();
     }

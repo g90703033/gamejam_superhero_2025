@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public interface ISpeedBuff 
+public interface ISizeBuff 
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void AddSpeedLevel(int level);
-    public void RemoveSpeedLevel(int level);
+    public void AddSizeLevel(int level);
+    public void RemoveSizeLevel(int level);
 }
