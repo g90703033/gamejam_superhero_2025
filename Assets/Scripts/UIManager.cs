@@ -138,6 +138,7 @@ public class UIManager : MonoBehaviour
 
         if(isSinglePlayerGame == true){
             hud1PPanel.SetActive(false);
+            GameState.Instance.DestroyP2();
         }
         else{
             hud2PPanel.SetActive(false);

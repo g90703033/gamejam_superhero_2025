@@ -16,6 +16,10 @@ public class GameState : MonoBehaviour
         Instance = this;
     }
 
+    public void DestroyP2()
+    {
+        Player2.SetActive(false);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
