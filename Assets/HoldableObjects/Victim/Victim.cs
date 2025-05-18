@@ -15,6 +15,8 @@ public class Victim : HoldableObject
     public float deadRecycleDelay = 3f;
     private float deadMoment;
 
+    public GameObject deadVFX;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +48,14 @@ public class Victim : HoldableObject
         SetJointForce(val ? activeJointSpring : 0f);
 
         EndFirstComing();
+
+        if (val)
+        {
+            deadVFX.transform.position = transform.position;
+            deadVFX.transform.rotation = Quaternion.identity;
+            deadVFX.transform.parent = null;
+            deadVFX.SetActive(true);
+         }
      }
 
     public void Recycle()
@@ -72,6 +82,8 @@ public class Victim : HoldableObject
 
         isDead = false;
         SetJointForce(0f);
+
+        deadVFX.SetActive(false);
     }
 
     public override void ThrowObject(Vector3 force)
