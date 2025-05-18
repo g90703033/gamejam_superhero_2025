@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public List<Slider> powervalueSliders = new List<Slider>();
     public RectTransform selection1P;
     public RectTransform selection2P;
+    public TextMeshProUGUI showScore;
 
     //確認是否為單人遊戲
     private bool isSinglePlayerGame = true;
@@ -47,11 +48,32 @@ public class UIManager : MonoBehaviour
 
     public Slider powerSlide;
 
+    public int rescuedThreshold = 15;
+    public int rescued = 0;
+
     void Start()
     {
         ShowMainMenu();
     }
 
+    public void SetScore(int score)
+    {
+        showScore.text = score.ToString() + "/" + rescuedThreshold.ToString();
+    }
+
+    public void AddRescue(int count)
+    {
+        rescued += count;
+
+        SetScore(rescued);
+
+        if (rescued > rescuedThreshold)
+        {
+            //TODO: success
+            showScore.text += " Success!!";
+            showScore.color = Color.green;
+        }
+    }
 
     //開始選單
     public void ShowMainMenu()
@@ -77,6 +99,8 @@ public class UIManager : MonoBehaviour
         isTimerStart = true;
         timer = timerThrshold;
         Time.timeScale = 1f;
+        SetScore(0);
+        showScore.gameObject.SetActive(true);
 
         GameState.Instance.Player2.SetActive(false);
     }
@@ -92,6 +116,8 @@ public class UIManager : MonoBehaviour
         isTimerStart = true;
         timer = timerThrshold;
         Time.timeScale = 1f;
+        SetScore(0);
+        showScore.gameObject.SetActive(true);
     }
 
     //離開遊戲
@@ -159,6 +185,9 @@ public class UIManager : MonoBehaviour
         selection1P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility1PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection1P.anchoredPosition.y);
         selection2P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility2PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection2P.anchoredPosition.y);
         abilityChoosePanel.SetActive(true);
+
+        selection1P.localScale = Vector3.one;
+        selection2P.localScale = Vector3.one;
         is1PReadyToGetAbility = false;
         is2PReadyToGetAbility = false;
         isAllReadyToGetAbility = false;
@@ -266,6 +295,8 @@ public class UIManager : MonoBehaviour
             if (Keyboard.current[Key.R].wasPressedThisFrame)
             {
                 is1PReadyToGetAbility = !is1PReadyToGetAbility;
+
+                selection1P.localScale = Vector3.one * (is1PReadyToGetAbility ? 1.5f : 1.0f);
             }
 
             if (Keyboard.current[Key.J].wasPressedThisFrame && is2PReadyToGetAbility == false)
@@ -307,6 +338,7 @@ public class UIManager : MonoBehaviour
             if (Keyboard.current[Key.P].wasPressedThisFrame)
             {
                 is2PReadyToGetAbility = !is2PReadyToGetAbility;
+                selection2P.localScale = Vector3.one * (is2PReadyToGetAbility ? 1.5f : 1.0f);
             }
 
             if (is1PReadyToGetAbility == true && is2PReadyToGetAbility == true)
