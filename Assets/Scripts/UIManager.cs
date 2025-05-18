@@ -77,6 +77,8 @@ public class UIManager : MonoBehaviour
         isTimerStart = true;
         timer = timerThrshold;
         Time.timeScale = 1f;
+
+        GameState.Instance.Player2.SetActive(false);
     }
 
     //開始 2P 遊戲
@@ -130,6 +132,8 @@ public class UIManager : MonoBehaviour
         isTimerStart = true;
         timer = timerThrshold;
         DisplayTimerText();
+
+        SceneManager.LoadScene(0);
     }
 
     //開啟能力選單畫面
@@ -141,7 +145,7 @@ public class UIManager : MonoBehaviour
         {
             bufferSelectionImage[i].sprite = bufferSelection[i].icon;
             bufferSelectionTitle[i].text = bufferSelection[i].title;
-            bufferSelectionDescription[i].text = $"Lift:{bufferSelection[i].attributes.weightLifting} <br> Speed:{bufferSelection[i].attributes.moveSpeed}";
+            bufferSelectionDescription[i].text = $"Lift:{bufferSelection[i].attributes.weightLifting} <br> Speed:{bufferSelection[i].attributes.moveSpeed} <br> Size:{bufferSelection[i].attributes.size} <br> Strength:{bufferSelection[i].attributes.strength}";
         }
 
         if (isSinglePlayerGame == true)

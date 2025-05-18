@@ -289,8 +289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 2P
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d9576c0f9a67eea44ad806b1b4c48447, type: 2}
+  m_sharedMaterial: {fileID: -3204214432481123534, guid: d9576c0f9a67eea44ad806b1b4c48447, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2816,9 +2816,7 @@ MonoBehaviour:
   hud1PPanel: {fileID: 8209937292215946605}
   hud2PPanel: {fileID: 8847480105402966294}
   abilityChoosePanel: {fileID: 8806370102778761346}
-  powerSlide: {fileID: 0}
   timerText: {fileID: 4416080894520220688}
-  ability: []
   buffManager: {fileID: 0}
   bufferSelectionImage:
   - {fileID: 734263045056363001}
@@ -2832,6 +2830,9 @@ MonoBehaviour:
   - {fileID: 3550283132942392043}
   - {fileID: 5735795549374765259}
   - {fileID: 7312427699822934792}
+  powervalueSliders: []
+  selection1P: {fileID: 0}
+  selection2P: {fileID: 0}
   is1PReadyToGetAbility: 1
   is2PReadyToGetAbility: 1
   isAllReadyToGetAbility: 1
@@ -2839,6 +2840,7 @@ MonoBehaviour:
   currentAbility2PSelect: 1
   powerThreshold: 100
   timerThrshold: 20
+  powerSlide: {fileID: 0}
 --- !u!1 &4776681740482224155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,8 +5191,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1P
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d9576c0f9a67eea44ad806b1b4c48447, type: 2}
+  m_sharedMaterial: {fileID: -3204214432481123534, guid: d9576c0f9a67eea44ad806b1b4c48447, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
