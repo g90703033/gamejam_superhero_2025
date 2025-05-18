@@ -58,5 +58,7 @@ public class HeroArm : MonoBehaviour
         {
             holdableObjectList[i].ReleaseObject();
          }
+        holdableObjectList.Clear();
+        holdingWeight = 0f;
     }
 }

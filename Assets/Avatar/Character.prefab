@@ -261,7 +261,7 @@ MonoBehaviour:
   facing: {x: 0, y: 0, z: 0}
   throwStrength: 50
   heroCols: []
-  maxHoldingWeight: 600
+  maxHoldingWeight: 300
   onArmBrokenEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -335,18 +335,23 @@ MonoBehaviour:
   - type: 0
     PlayerLimb: {fileID: 6014169998305639281}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   - type: 1
     PlayerLimb: {fileID: 4729865731126416029}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   - type: 3
     PlayerLimb: {fileID: 8543739311598110403}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   - type: 2
     PlayerLimb: {fileID: 5930303054071998900}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   - type: 4
     PlayerLimb: {fileID: 7836506481937353056}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1478994605287580996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c88c2de35d4bc047b3c650ddce250d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CatChLimbCollider: {fileID: 1661971037031019345}
 --- !u!136 &1661971037031019345
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1226,6 +1232,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   HeroArm: {fileID: 545622950076938016}
 --- !u!153 &2396727671993418865
 ConfigurableJoint:
@@ -1428,6 +1435,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   HeroArm: {fileID: 0}
 --- !u!144 &5174919076615561938
 CharacterJoint:
@@ -1497,6 +1505,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   HeroArm: {fileID: 0}
 --- !u!136 &3480127040324678946
 CapsuleCollider:
@@ -1575,6 +1584,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   HeroArm: {fileID: 0}
 --- !u!144 &2697967828468359377
 CharacterJoint:
@@ -1671,6 +1681,7 @@ MonoBehaviour:
     type: 0
     PlayerLimb: {fileID: 0}
     limbHeader: {fileID: 0}
+    OriginQuaternion: {x: 0, y: 0, z: 0, w: 0}
   HeroArm: {fileID: 1770490103049604847}
 --- !u!153 &8400410208788528359
 ConfigurableJoint:
