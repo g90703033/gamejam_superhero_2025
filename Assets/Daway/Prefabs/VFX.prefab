@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7893081373830308288
 Transform:
   m_ObjectHideFlags: 0
@@ -58,11 +58,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
       propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Name
       value: Color
       objectReference: {fileID: 0}
     - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: Size
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
       propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1798609679884134122, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
@@ -159,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8383421585754554846, guid: 7a912bc9b9c674daca9113392c37824e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victimPool: {fileID: 2358590237122379373}
-  createZone: {x: 20, y: 0, z: 13}
+  createZone: {x: 10, y: 0, z: 7}
   createGapBegin: {x: 5, y: 10}
   createGapFinal: {x: 5, y: 7}
   createAmountBegin: {x: 1, y: 1}
