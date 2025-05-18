@@ -18,7 +18,12 @@ public class SizeBuff : Buff
         go.GetComponent<CharacterStats>().ChangeAttribute(
             attributes
             );
-        //TODO: implement 
+        //TODO: implement
+        ISizeBuff controller = go.GetComponent<Hero>() as ISizeBuff;
+        if (controller != null)
+        {
+            controller.AddSizeLevel(index);
+        }
     }
 
     public override void Remove(GameObject go)
@@ -30,5 +35,10 @@ public class SizeBuff : Buff
             attributes
             );
         //TODO: implement
+        ISizeBuff controller = go.GetComponent<Hero>() as ISizeBuff;
+        if (controller != null)
+        {
+            controller.RemoveSizeLevel(index);
+        }
     }
 }

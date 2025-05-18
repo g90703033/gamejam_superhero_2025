@@ -28,6 +28,8 @@ public class Score : MonoBehaviour
             {
                 uiManager.PowerValueOperation(plusValue);
 
+                uiManager.AddRescue(1);
+
                 victim.Recycle();
             } 
         }

@@ -18,7 +18,13 @@ public class StrengthBuff : Buff
         go.GetComponent<CharacterStats>().ChangeAttribute(
             attributes
             );
-        //TODO: implement 
+
+        //TODO: implement
+        IStrengthBuff controller = go.GetComponent<Hero>() as IStrengthBuff;
+        if (controller != null)
+        {
+            controller.AddStrengthLevel(index);
+        }
     }
 
     public override void Remove(GameObject go)
@@ -30,5 +36,10 @@ public class StrengthBuff : Buff
             attributes
             );
         //TODO: implement
+        IStrengthBuff controller = go.GetComponent<Hero>() as IStrengthBuff;
+        if (controller != null)
+        {
+            controller.RemoveStrengthLevel(index);
+        }
     }
 }
