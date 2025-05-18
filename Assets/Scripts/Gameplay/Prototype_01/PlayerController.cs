@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IPlayerController
+public class PlayerController : MonoBehaviour, ISpeedBuff
 {
     public float moveSpeed = 5f;
     public float rotationSpeed = 100f;

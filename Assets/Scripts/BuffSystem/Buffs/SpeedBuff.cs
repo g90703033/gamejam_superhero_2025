@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class WeightLeftingBuff1 : Buff
+public class SpeedBuff : Buff
 {
     protected int index;
 
-    public WeightLeftingBuff1(int input)
+    public SpeedBuff(int input)
     {
-        buffName = "Weight Lifting Buff";
+        buffName = "Speed Buff";
         index = input;
     }
 
     public override void Apply(GameObject go)
     {
-        IPlayerController controller = go.GetComponent<PlayerController2>() as IPlayerController;
+        ISpeedBuff controller = go.GetComponent<PlayerController2>() as ISpeedBuff;
         if (controller != null)
         {
             controller.AddSpeedLevel(index);
@@ -21,7 +21,7 @@ public class WeightLeftingBuff1 : Buff
 
     public override void Remove(GameObject go)
     {
-        IPlayerController controller = go.GetComponent<PlayerController2>() as IPlayerController;
+        ISpeedBuff controller = go.GetComponent<PlayerController2>() as ISpeedBuff;
         if (controller != null)
         {
             controller.RemoveSpeedLevel(index);

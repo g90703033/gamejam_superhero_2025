@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController2 : MonoBehaviour, IPlayerController
+public class PlayerController2 : MonoBehaviour, ISpeedBuff
 {
     public float moveSpeed = 5f;
     public float levelStep = 2f;
