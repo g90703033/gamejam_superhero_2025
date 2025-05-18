@@ -1678,6 +1678,7 @@ GameObject:
   - component: {fileID: 9007928875067179719}
   - component: {fileID: 3337034726837265102}
   - component: {fileID: 1226471804301279461}
+  - component: {fileID: 8590068293842524454}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Victim
@@ -1765,6 +1766,37 @@ MonoBehaviour:
   weight: 60
   attachedJoint: {fileID: 0}
   attachedArm: {fileID: 0}
+  isFirstComing: 0
+  initEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8590068293842524454}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: EnableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  firstComingEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8590068293842524454}
+        m_TargetAssemblyTypeName: VirtualShadowController, Assembly-CSharp
+        m_MethodName: DisableShadow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   myRbs:
   - {fileID: 7923932316665069102}
   - {fileID: 1215742154020419933}
@@ -1822,6 +1854,19 @@ MonoBehaviour:
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8590068293842524454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486115817334678101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa415db86bf14077832d7cacb763472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualShadow: {fileID: 0}
 --- !u!1 &4487341475316541571
 GameObject:
   m_ObjectHideFlags: 0

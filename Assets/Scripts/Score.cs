@@ -18,13 +18,22 @@ public class Score : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider other){
-        if(other.gameObject.tag == humanTag){
-            uiManager.PowerValueOperation(plusValue);
-        }
-        else if(other.gameObject.tag == rockTag)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == humanTag)
         {
-            uiManager.PowerValueOperation(minusValue);
+            Victim victim = other.GetComponent<Victim>();
+
+            if (victim != null)
+            {
+                uiManager.PowerValueOperation(plusValue);
+
+                victim.Recycle();
+            } 
         }
+            else if (other.gameObject.tag == rockTag)
+            {
+                uiManager.PowerValueOperation(minusValue);
+            }
     }
 }

@@ -10,10 +10,12 @@ namespace Jason.Avatar
         public LimbService limbService;
         public AvatarBodyStorage AvatarBodyStorage;
         public List<PlayerAttribute> AvatarLimb;
+        
         void Start()
         {
             SetCatchLimb();
             SetAllBody(DefaultType, LevelType.Default);
+
         }
 
         void Update()
@@ -26,10 +28,11 @@ namespace Jason.Avatar
         }
         private void SetCatchLimb()
         {
-            limbService.OnCatchLimb += (iimbAttribute) =>
+            limbService.OnCatchLimb += (limbAttribute) =>
             {
-                LimbHeader header = iimbAttribute.limbHeader;
-                SetLimb(header.limbTag.limbType, header.limbTag.modifyType, header.limbTag.levelType);
+                LimbHeader header = limbAttribute.limbHeader;
+                SetLimb(limbAttribute.type, header.limbTag.modifyType, header.limbTag.levelType);
+                Destroy(limbAttribute.PlayerLimb);
             };
         }
         public void SetLimb(LimbType limb, ModifyType modify, LevelType level)
@@ -38,7 +41,16 @@ namespace Jason.Avatar
             {
                 AvatarLimbModifyLevel attribute = AvatarBodyStorage.GetLimb(limb, modify, level);
                 if (storelimb.type == limb) 
-                { storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh; return; }
+                {
+                    if (storelimb.PlayerLimb.activeSelf is false)
+                    {
+                        storelimb.PlayerLimb.tag = "HeroArm";
+                        storelimb.PlayerLimb.transform.localRotation = storelimb.OriginQuaternion;
+                        storelimb.PlayerLimb.SetActive(true);
+                        storelimb.PlayerLimb.GetComponent<MeshFilter>().mesh = attribute.mesh;
+                    }
+                    return;
+                }
             }
         }
         public void SetAllBody(ModifyType modify, LevelType level)
@@ -57,6 +69,7 @@ namespace Jason.Avatar
             limb.limbHeader.limbTag.limbType = limb.type;
             limb.limbHeader.limbTag.modifyType = modify;
             limb.limbHeader.limbTag.levelType = level;
+            limb.OriginQuaternion = limb.PlayerLimb.transform.localRotation;
         }
         [Serializable]
         public class PlayerAttribute
@@ -64,6 +77,7 @@ namespace Jason.Avatar
             public LimbType type;
             public GameObject PlayerLimb;
             public LimbHeader limbHeader;
+            public Quaternion OriginQuaternion;
         }
     }
 }

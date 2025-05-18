@@ -37,6 +37,7 @@ public class VictimBody : MonoBehaviour
 
                         victim.SetGravity(false);
                         victim.SetJointForce(victim.activeJointSpring);
+                        victim.EndFirstComing();
                     }
                 }
                 else if (collision.transform.CompareTag("Victim"))
@@ -51,6 +52,7 @@ public class VictimBody : MonoBehaviour
 
                         victim.SetGravity(false);
                         victim.SetJointForce(victim.activeJointSpring);
+                        victim.EndFirstComing();
                     }
                 }
             }

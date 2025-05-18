@@ -15,6 +15,7 @@ public class Victim : HoldableObject
     public float deadRecycleDelay = 3f;
     private float deadMoment;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +44,8 @@ public class Victim : HoldableObject
         deadMoment = Time.time;
 
         SetJointForce(val ? activeJointSpring : 0f);
+
+        EndFirstComing();
      }
 
     public void Recycle()
