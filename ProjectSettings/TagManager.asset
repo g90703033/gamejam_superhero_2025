@@ -8,6 +8,7 @@ TagManager:
   - HeroArm
   - Victim
   - Ground
+  - Broken
   layers:
   - Default
   - TransparentFX
