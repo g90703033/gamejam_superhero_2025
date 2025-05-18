@@ -7,6 +7,12 @@ public class BuffCarry : MonoBehaviour
     public BuffAttribute attribute;
     bool inited = false;
 
+    public void ChangeTitle(string id)
+    {
+        title = id;
+        inited = false;
+    }
+
     public void Update()
     {
         if (!inited)
