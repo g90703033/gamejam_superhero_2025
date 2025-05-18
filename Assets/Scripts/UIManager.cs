@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
     public List<Image> bufferSelectionImage;
     public List<TextMeshProUGUI> bufferSelectionTitle;
     public List<TextMeshProUGUI> bufferSelectionDescription;
+    public List<Slider> powervalueSliders = new List<Slider>();
+    public RectTransform selection1P;
+    public RectTransform selection2P;
 
     //確認是否為單人遊戲
     private bool isSinglePlayerGame = true;
@@ -45,12 +48,11 @@ public class UIManager : MonoBehaviour
     //計時
     public float timerThrshold = 20f;
     private float timer = 0f;
+    public Slider powerSlide;
 
     void Start()
     {
         ShowMainMenu();
-        powerSlide.value = powerValue;
-        powerSlide.maxValue = powerThreshold;
     }
 
 
@@ -71,6 +73,9 @@ public class UIManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         hud1PPanel.SetActive(true);
         hud2PPanel.SetActive(false);
+        powerSlide = powervalueSliders[0];
+        powerSlide.value = powerValue;
+        powerSlide.maxValue = powerThreshold;
         isSinglePlayerGame = true;
         isTimerStart = true;
         timer = timerThrshold;
@@ -83,6 +88,9 @@ public class UIManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         hud1PPanel.SetActive(false);
         hud2PPanel.SetActive(true);
+        powerSlide = powervalueSliders[1];
+        powerSlide.value = powerValue;
+        powerSlide.maxValue = powerThreshold;
         isSinglePlayerGame = false;
         isTimerStart = true;
         timer = timerThrshold;
@@ -142,6 +150,8 @@ public class UIManager : MonoBehaviour
         else{
             hud2PPanel.SetActive(false);
         }
+        selection1P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility1PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection1P.anchoredPosition.y);
+        selection2P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility2PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection2P.anchoredPosition.y);
         abilityChoosePanel.SetActive(true);
         is1PReadyToGetAbility = false;
         is2PReadyToGetAbility = false;
@@ -198,6 +208,7 @@ public class UIManager : MonoBehaviour
             if(isSinglePlayerGame == true){
                 is2PReadyToGetAbility = true;
                 currentAbility2PSelect = 3;
+                selection2P.gameObject.SetActive(false);
             }
 
             if(Keyboard.current[Key.A].wasPressedThisFrame && is1PReadyToGetAbility == false){
@@ -211,6 +222,7 @@ public class UIManager : MonoBehaviour
                 if(currentAbility1PSelect < 0){
                     currentAbility1PSelect = 2;
                 }
+                selection1P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility1PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection1P.anchoredPosition.y);
             }
 
             if(Keyboard.current[Key.D].wasPressedThisFrame && is1PReadyToGetAbility == false){
@@ -224,6 +236,7 @@ public class UIManager : MonoBehaviour
                 if(currentAbility1PSelect > 2){
                     currentAbility1PSelect = 0;
                 }
+                selection1P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility1PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection1P.anchoredPosition.y);
             }
 
             if(Keyboard.current[Key.R].wasPressedThisFrame){
@@ -241,6 +254,7 @@ public class UIManager : MonoBehaviour
                 if(currentAbility2PSelect < 0){
                     currentAbility2PSelect = 2;
                 }
+                selection2P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility2PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection2P.anchoredPosition.y);
             }
 
             if(Keyboard.current[Key.L].wasPressedThisFrame && is2PReadyToGetAbility == false){
@@ -254,6 +268,7 @@ public class UIManager : MonoBehaviour
                 if(currentAbility2PSelect > 2){
                     currentAbility2PSelect = 0;
                 }
+                selection2P.anchoredPosition = new Vector2(bufferSelectionImage[currentAbility2PSelect].GetComponent<RectTransform>().anchoredPosition.x, selection2P.anchoredPosition.y);
             }
 
             if(Keyboard.current[Key.P].wasPressedThisFrame){
