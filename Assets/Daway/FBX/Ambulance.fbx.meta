@@ -3,7 +3,12 @@ guid: c68c652ae23388f449f86e5011264d4d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ambulance.001
+    second: {fileID: 2100000, guid: 794c0a659a419b84ea537b7968d395d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
