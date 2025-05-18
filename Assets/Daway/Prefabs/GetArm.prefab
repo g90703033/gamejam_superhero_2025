@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7811140629300211873
+--- !u!1 &7157591313759494213
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4862508864366602529}
-  - component: {fileID: 8071995908449931611}
-  - component: {fileID: 8367791321323251995}
+  - component: {fileID: 6213330331708132085}
+  - component: {fileID: 1798609679884134122}
+  - component: {fileID: 8383421585754554846}
   m_Layer: 0
-  m_Name: New VFX
+  m_Name: GetArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4862508864366602529
+--- !u!4 &6213330331708132085
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811140629300211873}
+  m_GameObject: {fileID: 7157591313759494213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28658485, y: 0.034, z: -2.3444233}
+  m_LocalPosition: {x: -0.53, y: 0, z: -3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!2083052967 &8071995908449931611
+--- !u!2083052967 &1798609679884134122
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811140629300211873}
+  m_GameObject: {fileID: 7157591313759494213}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: a219c715458a8454ca4feb8fbc5c072a, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 3eaee197d60162042af9fee26e51514b, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -50,7 +50,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 0.15
+        m_Name: Scale
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -71,16 +74,16 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!73398921 &8367791321323251995
+--- !u!73398921 &8383421585754554846
 VFXRenderer:
   serializedVersion: 1
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811140629300211873}
+  m_GameObject: {fileID: 7157591313759494213}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
