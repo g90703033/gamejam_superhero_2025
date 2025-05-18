@@ -40,6 +40,18 @@ public class VictimConsole : MonoBehaviour
         }
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+
+        // Draw a wire cube to represent the create zone
+        Vector3 center = transform.position;
+        Vector3 size = createZone; 
+
+        Gizmos.DrawWireCube(center, size);
+    }
+
+
     public float GetRandomRangeCoef()
     {
         return Random.Range(-0.5f, 0.5f);

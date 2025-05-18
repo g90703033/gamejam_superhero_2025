@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
+    
     [SerializeField]
     public HeroArm heroArmL;
     [SerializeField]
@@ -84,6 +85,10 @@ public class Hero : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+
+        //TODO: temp
+        moveInput *= -1;
 
         if (moveInput.magnitude > 0.1f)
         {
