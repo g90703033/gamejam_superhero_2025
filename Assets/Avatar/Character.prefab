@@ -261,7 +261,7 @@ MonoBehaviour:
   facing: {x: 0, y: 0, z: 0}
   throwStrength: 50
   heroCols: []
-  maxHoldingWeight: 600
+  maxHoldingWeight: 300
   onArmBrokenEvent:
     m_PersistentCalls:
       m_Calls: []
