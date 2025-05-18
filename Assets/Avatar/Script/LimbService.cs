@@ -50,7 +50,7 @@ namespace Jason.Avatar
 
             SetTag(brokenObject);
 
-            Vector3 explodeForce = UnityEngine.Random.insideUnitSphere * 30f;
+            Vector3 explodeForce = UnityEngine.Random.insideUnitSphere * 3000f;
             if (explodeForce.y < 0f) explodeForce.y = -explodeForce.y;
             brokenObject.GetComponent<Rigidbody>().AddForce(explodeForce, ForceMode.Impulse);
             ClearCmponent(brokenObject);
