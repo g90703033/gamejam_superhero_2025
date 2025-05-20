@@ -46,9 +46,15 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
     public int levelSize;
     public float[] levelSizeAttr;
 
+    public Joint[] joints;
+    public Vector3[] jointLocalPositions;
+    public Quaternion[] jointLocalRotations;
+    public Rigidbody[] jointRbs;
+    public Transform sizePivot;
+
     void Start()
     {
-        rb.maxAngularVelocity = 10000f;
+        rb.maxAngularVelocity = 1000f;
     }
 
     void FixedUpdate()
@@ -88,7 +94,7 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
         else
         {
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            rb.AddTorque(finalTorque, ForceMode.Acceleration);
+            rb.AddTorque(finalTorque, ForceMode.Force);
         }
     }
 
@@ -135,7 +141,7 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
     {
         for (int i = 0; i < heroCols.Length; i++)
         {
-            heroCols[i].enabled = false;
+            heroCols[i].enabled = true;
         }
     }
 
@@ -239,6 +245,8 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
         maxMoveSpeed = levelMoveSpeedAttr[usedLevel];
     }
 
+    public int sizeL = 1;
+
     public void AddSizeLevel(int level)
     {
         levelSize += level;
@@ -249,7 +257,21 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
             usedLevel = levelSizeAttr.Length - 1;
         }
 
+        sizePivot.gameObject.SetActive(false);
+
         transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
+
+        for (int i = 0; i < joints.Length; i++)
+        {
+            //joints[i].transform.localPosition = sizePivot.InverseTransformPoint(sizePivot.TransformPoint(jointLocalPositions[i]));
+            joints[i].transform.localPosition = jointLocalPositions[i];
+            joints[i].transform.localRotation = jointLocalRotations[i];
+
+            jointRbs[i].linearVelocity = Vector3.zero;
+            jointRbs[i].angularVelocity = Vector3.zero;
+        }
+
+        sizePivot.gameObject.SetActive(true);
     }
 
     public void RemoveSizeLevel(int level)
@@ -263,6 +285,20 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
             Debug.LogWarning("Level less than zero!!");
         }
 
+        sizePivot.gameObject.SetActive(false);
+
         transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
+
+        for (int i = 0; i < joints.Length; i++)
+        {
+            //joints[i].transform.localPosition = sizePivot.InverseTransformPoint(sizePivot.TransformPoint(jointLocalPositions[i]));
+            joints[i].transform.localPosition = jointLocalPositions[i];
+            joints[i].transform.localRotation = jointLocalRotations[i];
+
+            jointRbs[i].linearVelocity = Vector3.zero;
+            jointRbs[i].angularVelocity = Vector3.zero;
+        }
+
+        sizePivot.gameObject.SetActive(true);
     }
 }

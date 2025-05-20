@@ -45,7 +45,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789115248719763415}
   serializedVersion: 4
-  m_Mass: 500
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -255,13 +255,22 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   moveInput: {x: 0, y: 0}
-  moveForce: 10
+  moveForce: 25
   moveBrake: 2
-  maxMoveSpeed: 7
-  torqueSprint: 50000
+  maxMoveSpeed: 5
+  torqueSprint: 20000
   facing: {x: 0, y: 0, z: 0}
   throwStrength: 40
-  heroCols: []
+  heroCols:
+  - {fileID: 3480127040324678946}
+  - {fileID: 3563915631182312959}
+  - {fileID: 6322768019984486533}
+  - {fileID: 5755999394986509494}
+  - {fileID: 2064200398460927229}
+  - {fileID: 6523009368319743896}
+  - {fileID: 1173464101492921029}
+  - {fileID: 7451540293264504416}
+  - {fileID: 2582509426131896260}
   maxHoldingWeight: 200
   onArmBrokenEvent:
     m_PersistentCalls:
@@ -309,6 +318,28 @@ MonoBehaviour:
   - 1.6
   - 2
   - 3
+  joints:
+  - {fileID: 2396727671993418865}
+  - {fileID: 5174919076615561938}
+  - {fileID: 8400410208788528359}
+  - {fileID: 2697967828468359377}
+  jointLocalPositions:
+  - {x: 0.09418613, y: 1.6090059, z: 0.18194553}
+  - {x: 0.10504025, y: 1.0268867, z: 0.09839207}
+  - {x: 0.1062419, y: 1.6080012, z: -0.18516265}
+  - {x: 0.110928036, y: 1.0268867, z: -0.10306725}
+  jointLocalRotations:
+  - {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  - {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  - {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  - {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  jointRbs:
+  - {fileID: 3851758659594142644}
+  - {fileID: 4500268212146611885}
+  - {fileID: 7134971819518632348}
+  - {fileID: 4787224942702140005}
+  sizePivot: {fileID: 6642191492161452274}
+  sizeL: 1
 --- !u!1 &2960934102206434555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,9 +1303,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8508461122926741843, guid: 2d1d59de68eb26943b93287345525b78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7348555901452710524, guid: 2d1d59de68eb26943b93287345525b78, type: 3}
       propertyPath: m_TagString
       value: HeroArm
+      objectReference: {fileID: 0}
+    - target: {fileID: -5231025915140057479, guid: 2d1d59de68eb26943b93287345525b78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d1d59de68eb26943b93287345525b78, type: 3}
       propertyPath: m_Name
@@ -1384,7 +1423,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4729865731126416029}
   serializedVersion: 4
-  m_Mass: 300
+  m_Mass: 30
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1509,7 +1548,7 @@ ConfigurableJoint:
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
-    positionSpring: 100000
+    positionSpring: 10000
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -1588,7 +1627,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5930303054071998900}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1737,7 +1776,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7836506481937353056}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1834,7 +1873,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8543739311598110403}
   serializedVersion: 4
-  m_Mass: 300
+  m_Mass: 30
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1959,7 +1998,7 @@ ConfigurableJoint:
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
-    positionSpring: 100000
+    positionSpring: 10000
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0

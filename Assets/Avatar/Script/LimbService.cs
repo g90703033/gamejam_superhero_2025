@@ -47,18 +47,19 @@ namespace Jason.Avatar
             GameObject limbObject = limb.gameObject;
             limbObject.SetActive(false);
             GameObject brokenObject = Instantiate(limbObject, limbObject.transform.position, limbObject.transform.rotation);
+            brokenObject.transform.localScale = limb.hero.transform.localScale;
 
             SetTag(brokenObject);
-
-            Vector3 explodeForce = UnityEngine.Random.insideUnitSphere * 3000f;
-            if (explodeForce.y < 0f) explodeForce.y = -explodeForce.y;
-            brokenObject.GetComponent<Rigidbody>().AddForce(explodeForce, ForceMode.Impulse);
             ClearCmponent(brokenObject);
 
             GameObject vfx = Instantiate(limbVFX, limbObject.transform.position, limbObject.transform.rotation, brokenObject.transform);
             //vfx.transform.parent = brokenObject.transform;
 
             brokenObject.SetActive(true);
+
+            Vector3 explodeForce = UnityEngine.Random.insideUnitSphere * 30f;
+            if (explodeForce.y < 0f) explodeForce.y = -explodeForce.y;
+            brokenObject.GetComponent<Rigidbody>().AddForce(explodeForce, ForceMode.VelocityChange);
         }
         public void CatchLamb(GameObject gameObject)
         {
