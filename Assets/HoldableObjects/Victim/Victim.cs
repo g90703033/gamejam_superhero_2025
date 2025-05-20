@@ -77,13 +77,6 @@ public class Victim : HoldableObject
     {
         isDeadCounter = val;
         deadCountDownMoment = Time.time;
-    }
-    public void SetDead(bool val)
-    {
-        isDead = val;
-        deadMoment = Time.time;
-
-        SetJointForce(val ? activeJointSpring : 0f);
 
         EndFirstComing();
 
@@ -93,7 +86,15 @@ public class Victim : HoldableObject
             deadVFX.transform.rotation = Quaternion.identity;
             deadVFX.transform.parent = null;
             deadVFX.SetActive(true);
-         }
+        }
+    }
+
+    public void SetDead(bool val)
+    {
+        isDead = val;
+        deadMoment = Time.time;
+
+        SetJointForce(val ? 0f : activeJointSpring);
      }
 
     public void Recycle()
