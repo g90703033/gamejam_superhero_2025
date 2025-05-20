@@ -1825,6 +1825,8 @@ MonoBehaviour:
   pooledObject: {fileID: 1226471804301279461}
   isDead: 0
   deadRecycleDelay: 5
+  isDeadCounter: 0
+  deadCountDownPeriod: 3
   deadVFX: {fileID: 5862837654129459844}
   m_renderer: {fileID: 5670943965998568919}
   m_material: {fileID: 0}

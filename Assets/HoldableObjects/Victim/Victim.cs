@@ -15,6 +15,10 @@ public class Victim : HoldableObject
     public float deadRecycleDelay = 3f;
     private float deadMoment;
 
+    public bool isDeadCounter;
+    public float deadCountDownPeriod = 2f;
+    private float deadCountDownMoment;
+
     public GameObject deadVFX;
 
     public Renderer m_renderer;
@@ -54,16 +58,26 @@ public class Victim : HoldableObject
             }
             else if (isDead && Time.time - deadMoment > deadRecycleDelay)
             {
-                SetDissolve( 2f - (Time.time - deadMoment - deadRecycleDelay)*2);
+                SetDissolve(2f - (Time.time - deadMoment - deadRecycleDelay) * 2);
 
                 if (Time.time - deadMoment > deadRecycleDelay + 1f)
                 {
                     Recycle();
                 }
-             }
+            }
+            else if (isDeadCounter && Time.time - deadCountDownMoment > deadCountDownPeriod)
+            {
+                isDeadCounter = false;
+                SetDead(true);
+            }
         }
     }
 
+    public void SetDeadCountDown(bool val)
+    {
+        isDeadCounter = val;
+        deadCountDownMoment = Time.time;
+    }
     public void SetDead(bool val)
     {
         isDead = val;
@@ -104,6 +118,7 @@ public class Victim : HoldableObject
 
         SetGravity(true);
 
+        isDeadCounter = false;
         isDead = false;
         SetJointForce(0f);
 

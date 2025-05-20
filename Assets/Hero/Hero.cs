@@ -259,6 +259,9 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
 
         sizePivot.gameObject.SetActive(false);
 
+        heroArmL.ReleaseObjects();
+        heroArmR.ReleaseObjects();
+
         transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
 
         for (int i = 0; i < joints.Length; i++)
@@ -286,6 +289,9 @@ public class Hero : MonoBehaviour, ISizeBuff, IStrengthBuff, IWeightLiftingBuff,
         }
 
         sizePivot.gameObject.SetActive(false);
+
+        heroArmL.ReleaseObjects();
+        heroArmR.ReleaseObjects();
 
         transform.localScale = Vector3.one * levelSizeAttr[usedLevel];
 

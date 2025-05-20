@@ -12,9 +12,9 @@ public class VictimBody : MonoBehaviour
 
         if (victim.IsAttached) return;
 
-        if (collision.transform.CompareTag("Ground"))
+        if (!victim.isDeadCounter && collision.transform.CompareTag("Ground"))
         {
-            victim.SetDead(true);
+            victim.SetDeadCountDown(true);
             return;
          }
 
@@ -35,6 +35,7 @@ public class VictimBody : MonoBehaviour
 
                         AddJointToAttached(collision.rigidbody);
 
+                        victim.SetDeadCountDown(false);
                         victim.SetGravity(false);
                         victim.SetJointForce(victim.activeJointSpring);
                         victim.EndFirstComing();
@@ -50,6 +51,7 @@ public class VictimBody : MonoBehaviour
 
                         AddJointToAttached(collision.rigidbody);
 
+                        victim.SetDeadCountDown(false);
                         victim.SetGravity(false);
                         victim.SetJointForce(victim.activeJointSpring);
                         victim.EndFirstComing();
