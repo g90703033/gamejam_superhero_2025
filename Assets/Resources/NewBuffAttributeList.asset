@@ -18,14 +18,14 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: c67fbf9375ad5c34399c2849430ca7f7, type: 3}
     attributes:
       weightLifting: 0
-      moveSpeed: 2
+      moveSpeed: 1
       strength: 0
       size: 0
   - title: ho_ray
     description: carry_weight +1
     icon: {fileID: 21300000, guid: a2563f2b8dbc4044b9a50537d3a29962, type: 3}
     attributes:
-      weightLifting: 2
+      weightLifting: 1
       moveSpeed: 0
       strength: 0
       size: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     attributes:
       weightLifting: 0
       moveSpeed: 0
-      strength: 2
+      strength: 1
       size: 0
   - title: ho_oooo
     description: size+1
@@ -44,4 +44,4 @@ MonoBehaviour:
       weightLifting: 0
       moveSpeed: 0
       strength: 0
-      size: 2
+      size: 1
